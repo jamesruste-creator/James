@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Jaravilla | Portfolio</title>
+  <a href="https://sg.docworkspace.com/d/sbCaihEXOLmjWSB3_nk1mf81634x6r0tm34?sa=601.1074" download class="btn">📄 Download CV<a/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f172a;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    nav h2 {
+      color: #38bdf8;
+      font-size: 1.6rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 8%;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      animation: fadeInLeft 1s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 span {
+      color: #38bdf8;
+    }
+
+    .hero-text h3 {
+      font-size: 1.5rem;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #94a3b8;
+      max-width: 500px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-right: 10px;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      animation: fadeInRight 1s ease;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* About */
+    .about p {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.08);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact-box {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 16px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      transform: translateY(-3px);
+      background: #0ea5e9;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    /* Animation */
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text h3 {
+        font-size: 1.2rem;
+      }
+
+      .hero-image img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>My Portfolio</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>James Jaravilla</span></h1>
+        <h3>Student | Web Developer</h3>
+        <p>
+          I build modern websites, school systems, simulation projects, and interactive web apps using HTML
+        </p>
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="/file_00000000c11872069655483b25296409.png" alt="James Profile">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="card about">
+      <p>
+        Hi! I am <strong>James Jaravilla</strong>, an aspiring developer passionate about creating web-based systems and simulation projects.
+        I enjoy building attendance systems, school projects, and creative websites that are responsive and user-friendly.
+      </p>
+    </div>
+  </section>
+
+<div class="project-card">
+  <h3>Certificate</h3>
+  <p>Completed training in HTML, CSS, and JavaScript for responsive website development.</p>
+  <img src="/Messenger_creation_75A894D2-9104-48AC-99CB-2C207FD311EB~3.jpeg" alt="Web Development Certificate" style="width:50%; border-radius:10px; margin-top:10px;">
+  <div class="project-links" style="margin-top:10px;">
+    <a href="https://photos.app.goo.gl/u9AShkUEpiUfEc888" target="/Messenger_creation_75A894D2-9104-48AC-99CB-2C207FD311EB~3.jpeg">View Certificate</a>
+  </div>
+</div>
+<center>
+  
+</center>
+<div class="project-card">
+  <h3>Certificate</h3>
+  <p>Completed training in HTML, CSS, and  for responsive website development.</p>
+  <img src="/Messenger_creation_0206614F-EB64-45DD-BF80-BFA105E391DD~2.jpeg" alt="Web Development Certificate" style="width:50%; border-radius:10px; margin-top:10px;">
+  <div class="project-links" style="margin-top:10px;">
+    <a href="/Messenger_creation_0206614F-EB64-45DD-BF80-BFA105E391DD~2.jpeg" target="/Messenger_creation_0206614F-EB64-45DD-BF80-BFA105E391DD~2.jpeg">View Certificate</a>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>Certificate</h3>
+  <p>Completed training in HTML, CSS, and JavaScript for responsive website development.</p>
+  <img src="/Messenger_creation_A8126ED9-CF59-4889-96B0-AD822E8AB12E~2.jpeg" alt="Web Development Certificate" style="width:50%; border-radius:10px; margin-top:10px;">
+  <div class="project-links" style="margin-top:10px;">
+    <a href="https://photos.app.goo.gl/MJPsmgVCW4jkSKCEA" target="/Messenger_creation_75A894D2-9104-48AC-99CB-2C207FD311EB~3.jpeg">View Certificate</a>
+  </div>
+</div>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+      <div class="skill">Responsive Design</div>
+      <div class="skill">System Simulation</div>
+      <div class="skill">SPCK Editor</div>
+    </div>
+  </section>
+
+
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h3>Attendance System</h3>
+        <p>Smart attendance simulation with calendar, one-tap absent feature, and simple tracking.</p>
+        <div class="project-links">
+          <a href="#">Live Demo</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Quiz Game</h3>
+        <p>Interactive quiz game with levels, coins, sound effects, rewards, and game-over system.</p>
+        <div class="project-links">
+          <a href="#">Live Demo</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Flappy Bird Clone</h3>
+        <p>Fun browser game with coins, score system, star rewards, and mobile-friendly controls.</p>
+        <div class="project-links">
+          <a href="#">Live Demo</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Solar Charging Vending Machine</h3>
+        <p>School project concept for a solar-powered charging vending machine with sustainability focus.</p>
+        <div class="project-links">
+          <a href="#">Details</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="card contact-box">
+      <p><strong>Name:</strong> James Jaravilla</p>
+      <p><strong>Email:</strong> jamesruste@gmail.com</p>
+      <p><strong>Facebook:</strong>  James Jaravilla</p>
+
+      <div class="socials">
+        <a href="https://www.facebook.com/share/1CBLQr9wX2/" target="https://www.facebook.com/share/1CBLQr9wX2/">Facebook</a>
+        <a href="#" target="https://www.instagram.com/kiss_kobi_?igsh=MTE4azd3ZzFrd3QzMw==">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 James Jaravilla | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
